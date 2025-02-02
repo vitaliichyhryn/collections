@@ -6,12 +6,11 @@ fn is_vowel(c: char) -> bool {
 
 fn to_pig_latin(s: &str) -> String {
     let mut chars = s.chars();
-    let first = chars.next().unwrap();
 
-    if is_vowel(first) {
-        format!("{s}hay")
-    } else {
-        format!("{}{first}ay", chars.as_str())
+    match chars.next() {
+        Some(first) if is_vowel(first) => format!("{s}hay"),
+        Some(first) => format!("{}{}ay", chars.as_str(), first),
+        None => String::new(),
     }
 }
 
