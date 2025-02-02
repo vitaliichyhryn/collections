@@ -1,0 +1,16 @@
+[package]
+name = "collections"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "median"
+
+[[bin]]
+name = "mode"
+
+[[bin]]
+name = "pig_latin"
+
+[lib]
+name = "utils"
