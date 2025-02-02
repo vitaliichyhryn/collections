@@ -6,7 +6,7 @@ fn is_vowel(c: char) -> bool {
 }
 
 fn to_pig_latin(s: &str) -> String {
-    if is_vowel(s.chars().nth(0).unwrap()) {
+    if is_vowel(s.chars().next().unwrap()) {
         String::new()
             .chars()
             .chain(s.chars())
@@ -16,7 +16,7 @@ fn to_pig_latin(s: &str) -> String {
         String::new()
             .chars()
             .chain(s.chars().skip(1))
-            .chain(s.chars().nth(0))
+            .chain(s.chars().next())
             .chain("ay".chars())
             .collect()
     }

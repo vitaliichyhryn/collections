@@ -1,7 +1,7 @@
 use std::env;
 
-fn median(v: &Vec<i32>) -> f64 {
-    let mut sorted = v.clone();
+fn median(v: &[i32]) -> f64 {
+    let mut sorted = v.to_owned();
     sorted.sort();
     let middle = sorted.len() / 2;
     if sorted.len() % 2 == 0 {
