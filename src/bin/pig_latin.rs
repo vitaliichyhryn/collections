@@ -1,24 +1,17 @@
 use std::env;
 
 fn is_vowel(c: char) -> bool {
-    let vowels = "aeiou";
-    vowels.contains(c)
+    matches!(c, 'a' | 'e' | 'i' | 'o' | 'u')
 }
 
 fn to_pig_latin(s: &str) -> String {
-    if is_vowel(s.chars().next().unwrap()) {
-        String::new()
-            .chars()
-            .chain(s.chars())
-            .chain("hay".chars())
-            .collect()
+    let mut chars = s.chars();
+    let first = chars.next().unwrap();
+
+    if is_vowel(first) {
+        format!("{s}hay")
     } else {
-        String::new()
-            .chars()
-            .chain(s.chars().skip(1))
-            .chain(s.chars().next())
-            .chain("ay".chars())
-            .collect()
+        format!("{}{first}ay", chars.as_str())
     }
 }
 
