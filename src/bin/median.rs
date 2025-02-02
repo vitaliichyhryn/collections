@@ -1,5 +1,4 @@
 use std::env;
-use utils;
 
 fn median(v: &Vec<i32>) -> f64 {
     let mut sorted = v.clone();
