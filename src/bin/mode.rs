@@ -21,5 +21,5 @@ fn main() {
     let args: Vec<String> = env::args().collect();
     let vec = utils::args_to_int_vec(&args);
     let mode = mode(&vec);
-    println!("mode is {mode}.")
+    println!("Mode is {mode}.")
 }
